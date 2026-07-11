@@ -702,50 +702,7 @@ export default function PublicWebsite({
                 </button>
               </div>
 
-              {/* Portal Action / Guest Buttons */}
-              {loggedInMember ? (
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-black uppercase text-slate-500 max-w-[80px] truncate">
-                    {loggedInMember.name}
-                  </span>
-                  <button
-                    onClick={() => setNavSection('portal')}
-                    className={`font-extrabold px-3.5 py-1.5 rounded-lg shadow-xs text-[10.5px] cursor-pointer tracking-wide uppercase shrink-0 transition-all ${
-                      themeMode === 'light'
-                        ? 'bg-slate-100 hover:bg-slate-200 text-black border border-slate-300'
-                        : 'bg-blue-600 hover:bg-blue-700 text-white'
-                    }`}
-                  >
-                    {t.myPortal}
-                  </button>
-                  <button
-                    onClick={onLogout}
-                    className="font-extrabold px-3 py-1.5 rounded-lg text-[10.5px] cursor-pointer uppercase tracking-wider bg-red-600 hover:bg-red-700 text-white transition-all"
-                  >
-                    Keluar
-                  </button>
-                </div>
-              ) : currentRole === 'super_admin' ? (
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-black uppercase text-amber-500">Admin</span>
-                  <button
-                    onClick={() => setNavSection('admin')}
-                    className={`font-extrabold px-3.5 py-1.5 rounded-lg shadow-xs text-[10.5px] cursor-pointer tracking-wide uppercase shrink-0 transition-all ${
-                      themeMode === 'light'
-                        ? 'bg-slate-100 hover:bg-slate-200 text-black border border-slate-300'
-                        : 'bg-amber-600 hover:bg-amber-700 text-white'
-                    }`}
-                  >
-                    {t.mgmtDashboard}
-                  </button>
-                  <button
-                    onClick={onLogout}
-                    className="font-extrabold px-3 py-1.5 rounded-lg text-[10.5px] cursor-pointer uppercase tracking-wider bg-red-600 hover:bg-red-700 text-white transition-all"
-                  >
-                    Keluar
-                  </button>
-                </div>
-              ) : null}
+
             </div>
           </div>
 
@@ -881,60 +838,7 @@ export default function PublicWebsite({
                 ))}
               </div>
 
-              {/* Portal / Admin Actions for Mobile */}
-              {loggedInMember ? (
-                <div className="space-y-2 mt-2">
-                  <div className={`p-3 rounded-xl border text-center font-bold text-xs ${
-                    themeMode === 'light' ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-800 text-slate-200'
-                  }`}>
-                    👤 {loggedInMember.name} (Anggota)
-                  </div>
-                  <button
-                    onClick={() => {
-                      setNavSection('portal');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full py-3.5 rounded-xl font-black text-xs uppercase tracking-wide cursor-pointer text-center shadow-xs transition-all bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2"
-                  >
-                    👤 {t.myPortal}
-                  </button>
-                  <button
-                    onClick={() => {
-                      onLogout();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full py-3.5 rounded-xl font-black text-xs uppercase tracking-wide cursor-pointer text-center shadow-xs transition-all bg-red-600 hover:bg-red-700 text-white flex items-center justify-center gap-2"
-                  >
-                    🚪 Keluar / Logout
-                  </button>
-                </div>
-              ) : currentRole === 'super_admin' ? (
-                <div className="space-y-2 mt-2">
-                  <div className={`p-3 rounded-xl border text-center font-bold text-xs ${
-                    themeMode === 'light' ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-slate-900 border-slate-800 text-slate-200'
-                  }`}>
-                    💼 Super Admin
-                  </div>
-                  <button
-                    onClick={() => {
-                      setNavSection('admin');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full py-3.5 rounded-xl font-black text-xs uppercase tracking-wide cursor-pointer text-center shadow-xs transition-all bg-amber-500 hover:bg-amber-600 text-white flex items-center justify-center gap-2"
-                  >
-                    💼 {t.mgmtDashboard}
-                  </button>
-                  <button
-                    onClick={() => {
-                      onLogout();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full py-3.5 rounded-xl font-black text-xs uppercase tracking-wide cursor-pointer text-center shadow-xs transition-all bg-red-600 hover:bg-red-700 text-white flex items-center justify-center gap-2"
-                  >
-                    🚪 Keluar / Logout
-                  </button>
-                </div>
-              ) : null}
+
             </div>
           )}
         </div>

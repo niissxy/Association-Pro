@@ -1806,6 +1806,20 @@ export default function MemberPortal({
                 Simpan Profil & Kebijakan
               </button>
             </form>
+
+            <div className={`mt-8 pt-6 border-t ${themeMode === 'light' ? 'border-slate-200' : 'border-slate-800'} text-center space-y-3`}>
+              <div className="flex flex-col items-center gap-1">
+                <h4 className={`text-[11px] font-black uppercase tracking-wider ${themeMode === 'light' ? 'text-slate-800' : 'text-slate-200'}`}>Tindakan Sesi Keanggotaan</h4>
+                <p className="text-[10px] text-slate-400 font-semibold">Anda dapat keluar dari sesi akun terverifikasi Anda saat ini di bawah.</p>
+              </div>
+              <button
+                onClick={onLogOut}
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-black text-xs uppercase cursor-pointer text-white bg-red-600 hover:bg-red-700 transition-all duration-150 shadow-md active:scale-97"
+              >
+                <LogOut className="w-4 h-4" />
+                <span>KELUAR SEKARANG (LOGOUT)</span>
+              </button>
+            </div>
           </div>
         )}
       </div>

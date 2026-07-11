@@ -25,7 +25,8 @@ import {
   FileCheck,
   HelpCircle,
   Clock,
-  Briefcase
+  Briefcase,
+  LogOut
 } from 'lucide-react';
 import {
   Member,
@@ -68,6 +69,7 @@ interface AdminProps {
   onUpdateInquiryStatus: (inquiryId: string, status: any) => void;
   onAddPoll: (newPoll: Partial<Poll>) => void;
   onSolveTicket: (ticketId: string) => void;
+  onLogOut: () => void;
 }
 
 export default function AdminDashboard({
@@ -95,9 +97,11 @@ export default function AdminDashboard({
   onCheckInTicket,
   onUpdateInquiryStatus,
   onAddPoll,
-  onSolveTicket
+  onSolveTicket,
+  onLogOut
 }: AdminProps) {
   const [adminMenu, setAdminMenu] = useState<'overview' | 'members' | 'finance' | 'events' | 'certificates' | 'documents' | 'crm' | 'voting' | 'logs' | 'profile'>('overview');
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const handleBulkIssue = () => {
     alert('Memulai Inkubator Masal CPD: Memproses sertifikasi untuk seluruh peserta aktif...');
@@ -394,38 +398,89 @@ export default function AdminDashboard({
     }, 3000);
   };
 
+  const menuItems = [
+    { id: 'overview', label: 'Ringkasan Statistik', icon: (sl: string) => <Activity className={sl} /> },
+    { id: 'members', label: 'Verifikasi Anggota & CRM', icon: (sl: string) => <Users className={sl} /> },
+    { id: 'finance', label: 'Konfirmasi Keuangan / VA', icon: (sl: string) => <Wallet className={sl} /> },
+    { id: 'events', label: 'Kegiatan & QR Scan', icon: (sl: string) => <Calendar className={sl} /> },
+    { id: 'certificates', label: 'E-Sertifikat Kontrol', icon: (sl: string) => <Award className={sl} /> },
+    { id: 'documents', label: 'Berkas SOP / AD-ART', icon: (sl: string) => <BookOpen className={sl} /> },
+    { id: 'crm', label: 'Pipeline Mitra Sponsor', icon: (sl: string) => <Sliders className={sl} /> },
+    { id: 'voting', label: 'Kelola Voting Demokrasi', icon: (sl: string) => <Vote className={sl} /> },
+    { id: 'logs', label: 'Audit Rails / Log', icon: (sl: string) => <Shield className={sl} /> },
+    { id: 'profile', label: 'Profil Admin', icon: (sl: string) => <Sliders className={sl} /> }
+  ];
+
   return (
-    <div className="space-y-6">
-      {/* Sub-Header / Admin Menu Control */}
-      <div className="bg-slate-100 dark:bg-[#0c1222]/80 border-b border-slate-200/50 dark:border-slate-800/80 p-3 rounded-2xl flex flex-wrap gap-2 text-[11px] font-bold items-center">
-        {[
-          { id: 'overview', label: 'Ringkasan Statistik', icon: sl => <Activity className={sl} /> },
-          { id: 'members', label: 'Verifikasi Anggota & CRM', icon: sl => <Users className={sl} /> },
-          { id: 'finance', label: 'Konfirmasi Keuangan / VA', icon: sl => <Wallet className={sl} /> },
-          { id: 'events', label: 'Kegiatan & QR Scan', icon: sl => <Calendar className={sl} /> },
-          { id: 'certificates', label: 'E-Sertifikat Kontrol', icon: sl => <Award className={sl} /> },
-          { id: 'documents', label: 'Berkas SOP / AD-ART', icon: sl => <BookOpen className={sl} /> },
-          { id: 'crm', label: 'Pipeline Mitra Sponsor', icon: sl => <Sliders className={sl} /> },
-          { id: 'voting', label: 'Kelola Voting Demokrasi', icon: sl => <Vote className={sl} /> },
-          { id: 'logs', label: 'Audit Rails / Log', icon: sl => <Shield className={sl} /> },
-          { id: 'profile', label: 'Profil Admin', icon: sl => <Sliders className={sl} /> }
-        ].map(it => (
-          <button
-            key={it.id}
-            onClick={() => {
-              setAdminMenu(it.id as any);
-              setSelectedVerifMember(null);
-            }}
-            className={`px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all cursor-pointer ${
-              adminMenu === it.id
-                ? `${colorTheme.bg} text-white font-extrabold shadow-xs`
-                : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-900/60'
-            }`}
-          >
-            {it.icon("w-4 h-4 shrink-0")} {it.label}
-          </button>
-        ))}
+    <div className="flex flex-col md:flex-row gap-6 items-start">
+      {/* Sidebar for Desktop / Tablet */}
+      <aside className="hidden md:block w-full md:w-64 shrink-0 rounded-2xl border p-4 space-y-4 bg-slate-800 dark:bg-[#0c1222]/80 border-slate-700/50 dark:border-slate-800/80 shadow-md">
+        <div className="px-2 pb-2 border-b border-slate-700/50 dark:border-slate-800/80">
+          <h3 className="text-xs font-black uppercase tracking-wider text-slate-400">Navigasi Admin</h3>
+          <p className="text-[10px] text-slate-300 font-bold mt-0.5">Asosiasi Profesional Nusantara</p>
+        </div>
+        <nav className="space-y-1">
+          {menuItems.map(it => (
+            <button
+              key={it.id}
+              onClick={() => {
+                setAdminMenu(it.id as any);
+                setSelectedVerifMember(null);
+              }}
+              className={`w-full px-3 py-2.5 rounded-xl flex items-center gap-2.5 transition-all cursor-pointer text-left font-bold text-xs ${
+                adminMenu === it.id
+                  ? `${colorTheme.bg} text-white font-extrabold shadow-sm`
+                  : 'text-slate-300 hover:text-white hover:bg-slate-700/60 dark:text-slate-300 dark:hover:bg-slate-900/60'
+              }`}
+            >
+              {it.icon("w-4 h-4 shrink-0")}
+              <span className="truncate">{it.label}</span>
+            </button>
+          ))}
+        </nav>
+      </aside>
+
+      {/* Mobile Navigation Selector */}
+      <div className="md:hidden w-full relative">
+        <button
+          onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+          className="w-full p-3.5 rounded-2xl border font-black text-xs uppercase tracking-wide flex items-center justify-between transition-all bg-slate-800 dark:bg-[#0c1222]/80 border-slate-700/50 dark:border-slate-800/80 text-white shadow-xs"
+        >
+          <span className="flex items-center gap-2">
+            {menuItems.find(it => it.id === adminMenu)?.icon("w-4 h-4 text-slate-300")}
+            {menuItems.find(it => it.id === adminMenu)?.label}
+          </span>
+          <span className="text-[10px] text-slate-300 flex items-center gap-1 bg-slate-700 dark:bg-slate-900 px-2.5 py-1 rounded-lg">
+            {isMobileNavOpen ? 'TUTUP' : 'MENU'} ▾
+          </span>
+        </button>
+        
+        {isMobileNavOpen && (
+          <div className="mt-2 border rounded-2xl p-2.5 space-y-1 shadow-md absolute z-20 left-0 right-0 bg-slate-800 border-slate-700 dark:bg-slate-900 dark:border-slate-800">
+            {menuItems.map(it => (
+              <button
+                key={it.id}
+                onClick={() => {
+                  setAdminMenu(it.id as any);
+                  setSelectedVerifMember(null);
+                  setIsMobileNavOpen(false);
+                }}
+                className={`w-full px-3 py-2.5 rounded-xl flex items-center gap-2.5 transition-all cursor-pointer text-left font-bold text-xs ${
+                  adminMenu === it.id
+                    ? `${colorTheme.bg} text-white font-extrabold`
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700/60 dark:text-slate-300 dark:hover:bg-slate-800/40'
+                }`}
+              >
+                {it.icon("w-4 h-4 shrink-0")}
+                <span>{it.label}</span>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
+
+      {/* Main Content Area */}
+      <div className="flex-1 w-full space-y-6">
 
       {/* DASHBOARD OVERVIEW PANELS */}
       {adminMenu === 'overview' && (
@@ -1266,10 +1321,25 @@ export default function AdminDashboard({
                   SIMPAN PERUBAHAN PROFIL
                 </button>
               </form>
+
+              <div className={`mt-8 pt-6 border-t ${themeMode === 'light' ? 'border-slate-200' : 'border-slate-800'} text-center space-y-3`}>
+                <div className="flex flex-col items-center gap-1">
+                  <h4 className={`text-[11px] font-black uppercase tracking-wider ${themeMode === 'light' ? 'text-slate-800' : 'text-slate-200'}`}>Sesi Administrasi</h4>
+                  <p className="text-[10px] text-slate-400 font-semibold">Anda dapat keluar dari sesi administrator Anda saat ini di bawah ini.</p>
+                </div>
+                <button
+                  onClick={onLogOut}
+                  className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-black text-xs uppercase cursor-pointer text-white bg-red-600 hover:bg-red-700 transition-all duration-150 shadow-md active:scale-97"
+                >
+                  <LogOut className="w-4 h-4" />
+                  <span>KELUAR SEKARANG (LOGOUT)</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

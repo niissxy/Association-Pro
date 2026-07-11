@@ -1135,6 +1135,7 @@ export default function App() {
               onSolveTicket={handleSolveTicket}
               adminProfile={adminProfile}
               onUpdateAdminProfile={handleUpdateAdminProfile}
+              onLogOut={() => handleRoleSwap('public')}
             />
           </div>
         )}
