@@ -1972,6 +1972,306 @@ const bilingualDictionary: Record<string, Record<Exclude<LanguageCode, 'id'>, st
     ar: "هناك خطأ مطبعي في الرقم الأخير من رقم NIK الخاص بي في تفاصيل التحقق من البيانات. يرجى المساعدة في تصحيحه من قبل المسؤول.",
     zh: "在我的身份信息验证详情中，身份证号（NIK）的最后一位数字存在拼写错误。恳请管理员协助修正。",
     ja: "データ確認詳細における私の身分証番号（NIK）の最後の桁に誤字があります。管理者のほうで修正対応をお願いいたします。"
+  },
+
+  // Membership Levels Translations
+  "Student Member": {
+    en: "Student Member",
+    ar: "عضو طالب",
+    zh: "学生会员",
+    ja: "学生会員"
+  },
+  "Professional Member": {
+    en: "Professional Member",
+    ar: "عضو مهني",
+    zh: "专业会员",
+    ja: "プロフェッショナル会員"
+  },
+  "Corporate Member": {
+    en: "Corporate Member",
+    ar: "عضو مؤسسي",
+    zh: "企业会员",
+    ja: "法人会員"
+  },
+  "Executive Member": {
+    en: "Executive Member",
+    ar: "عضو تنفيذي",
+    zh: "高级行政会员",
+    ja: "エグゼクティブ会員"
+  },
+  "Lifetime Member": {
+    en: "Lifetime Member",
+    ar: "عضو مدى الحياة",
+    zh: "终身会员",
+    ja: "終身会員"
+  },
+
+  // Student Member description and benefits
+  "Keanggotaan untuk mahasiswa atau pelajar tingkat akhir yang ingin membangun jaringan profesional sejak dini.": {
+    en: "Membership for students or final-year pupils looking to build a professional network early on.",
+    ar: "عضوية للطلاب أو طلاب السنة النهائية الذين يرغبون في بناء شبكة مهنية في وقت مبكر.",
+    zh: "面向希望尽早建立专业人脉的学生或应届毕业生的会员资格。",
+    ja: "早い段階からプロフェッショナルな人脈を築きたい学生や最終学年の方向けの会員資格です。"
+  },
+  "Akses event komunitas": {
+    en: "Community event access",
+    ar: "الوصول إلى فعاليات المجتمع",
+    zh: "参与社区活动",
+    ja: "コミュニティイベントへのアクセス"
+  },
+  "Harga khusus pelatihan": {
+    en: "Special training pricing",
+    ar: "أسعار خاصة للتدريب",
+    zh: "专项培训优惠价格",
+    ja: "トレーニングの特別価格"
+  },
+  "Akses dokumen publik": {
+    en: "Public document access",
+    ar: "الوصول إلى المستندات العامة",
+    zh: "访问公开文档",
+    ja: "公開ドキュメントへのアクセス"
+  },
+  "Profil anggota student": {
+    en: "Student member profile",
+    ar: "ملف تعريف عضو طالب",
+    zh: "学生会员档案",
+    ja: "学生会員プロフィール"
+  },
+  "Newsletter bulanan": {
+    en: "Monthly newsletter",
+    ar: "النشرة الإخبارية الشهرية",
+    zh: "每月电子报",
+    ja: "月刊ニュースレター"
+  },
+
+  // Professional Member description and benefits
+  "Keanggotaan utama untuk profesional aktif dari berbagai industri.": {
+    en: "Main membership for active professionals from various industries.",
+    ar: "العضوية الرئيسية للمهنيين النشطين من مختلف القطاعات.",
+    zh: "面向各行各业活跃专业人士的核心会员身份。",
+    ja: "様々な業界で活躍するプロフェッショナルのためのメイン会員資格です。"
+  },
+  "Direktori anggota profesional": {
+    en: "Professional member directory",
+    ar: "دليل الأعضاء المهنيين",
+    zh: "专业会员名录",
+    ja: "プロフェッショナル会員名簿"
+  },
+  "Harga khusus event": {
+    en: "Special event pricing",
+    ar: "أسعار خاصة للفعاليات",
+    zh: "活动专属特惠票价",
+    ja: "イベントの特別価格"
+  },
+  "Akses dokumen anggota": {
+    en: "Member document access",
+    ar: "الوصول إلى مستندات الأعضاء",
+    zh: "访问会员专属文档",
+    ja: "会員限定ドキュメントへのアクセス"
+  },
+  "E-certificate": {
+    en: "E-certificate",
+    ar: "شهادة إلكترونية",
+    zh: "电子证书",
+    ja: "E-証明書"
+  },
+  "Job board": {
+    en: "Job board",
+    ar: "لوحة الوظائف",
+    zh: "求人掲示板",
+    ja: "ジョブボード"
+  },
+  "Voting anggota": {
+    en: "Member voting",
+    ar: "تصويت الأعضاء",
+    zh: "会员投票表决权",
+    ja: "会員投票"
+  },
+  "Newsletter eksklusif": {
+    en: "Exclusive newsletter",
+    ar: "النشرة الإخبارية الحصرية",
+    zh: "独家专享电子报",
+    ja: "限定ニュースレター"
+  },
+
+  // Corporate Member description and benefits
+  "Keanggotaan untuk perusahaan yang ingin terhubung dengan jaringan profesional dan bisnis nasional.": {
+    en: "Membership for companies looking to connect with national professional and business networks.",
+    ar: "عضوية للشركات التي ترغب في التواصل مع الشبكات المهنية والتجارية الوطنية.",
+    zh: "旨在与全国专业和商业网络建立联系的企业会员身份。",
+    ja: "全国のプロフェッショナルやビジネスネットワークとつながりたい企業向けの会員資格です。"
+  },
+  "Profil perusahaan di direktori": {
+    en: "Company profile in directory",
+    ar: "ملف تعريف الشركة in the directory",
+    zh: "企业黄页名录展示",
+    ja: "ディレクトリ内企業プロフィール"
+  },
+  "5 akun anggota tim": {
+    en: "5 team member accounts",
+    ar: "5 حسابات لأعضاء الفريق",
+    zh: "5 个团队成员账号",
+    ja: "チームメンバーアカウント5つ"
+  },
+  "Akses business matching": {
+    en: "Business matching access",
+    ar: "الوصول إلى مطابقة الأعمال",
+    zh: "商业配对与对接机会",
+    ja: "ビジネスマッチングへのアクセス"
+  },
+  "Prioritas sponsorship": {
+    en: "Sponsorship priority",
+    ar: "أولوية الرعاية",
+    zh: "赞助权优先考量",
+    ja: "スポンサーシップ優先権"
+  },
+  "Corporate billing": {
+    en: "Corporate billing",
+    ar: "الفواتير المؤسسية",
+    zh: "企业统一账单",
+    ja: "コーポレート請求"
+  },
+  "Logo di halaman member corporate": {
+    en: "Logo on corporate member page",
+    ar: "الشعار على صفحة الأعضاء من الشركات",
+    zh: "在企业会员页面展示Logo",
+    ja: "法人会員ページへのロゴ掲載"
+  },
+  "Akses event premium": {
+    en: "Premium event access",
+    ar: "الوصول إلى الفعاليات المميزة",
+    zh: "参与高端专属活动",
+    ja: "プレミアムイベントへのアクセス"
+  },
+
+  // Executive Member description and benefits
+  "Keanggotaan premium untuk founder, C-level, investor, dan pemimpin organisasi.": {
+    en: "Premium membership for founders, C-levels, investors, and organizational leaders.",
+    ar: "عضوية مميزة للمؤسسين والمسؤولين التنفيذيين والمستثمرين وقادة المؤسسات.",
+    zh: "面向创始人、C级高管、投资者及组织领袖的高端尊享会员身份。",
+    ja: "創業者、Cレベル役員、投資家、および組織のリーダー向けのプレミアム会員資格です。"
+  },
+  "Executive forum": {
+    en: "Executive forum",
+    ar: "المنتدى التنفيذي",
+    zh: "高管思想论坛",
+    ja: "エグゼクティブフォーラム"
+  },
+  "Private networking dinner": {
+    en: "Private networking dinner",
+    ar: "عشاء تواصل خاص",
+    zh: "私人闭门交流晚宴",
+    ja: "プライベート交流ディナー"
+  },
+  "Prioritas business matching": {
+    en: "Priority business matching",
+    ar: "أولوية مطابقة الأعمال",
+    zh: "优先商业匹配",
+    ja: "ビジネスマッチング優先権"
+  },
+  "Executive badge": {
+    en: "Executive badge",
+    ar: "شارة تنفيذية",
+    zh: "尊贵高管专属徽章",
+    ja: "エグゼクティブバッジ"
+  },
+  "Akses laporan industri": {
+    en: "Industry report access",
+    ar: "الوصول إلى تقارير الصناعة",
+    zh: "行业深度报告获取",
+    ja: "業界レポートへのアクセス"
+  },
+  "Undangan event tertutup": {
+    en: "Closed event invitation",
+    ar: "دعوة لفعالية مغلقة",
+    zh: "闭门定向活动邀请",
+    ja: "招待制クローズドイベントへの招待"
+  },
+  "Concierge sekretariat": {
+    en: "Secretariat concierge",
+    ar: "خدمة كونسيرj الأمانة",
+    zh: "秘书处专属管家服务",
+    ja: "事務局コンシェルジュ"
+  },
+
+  // Lifetime Member description and benefits
+  "Keanggotaan seumur hidup untuk tokoh, profesional senior, dan kontributor utama asosiasi.": {
+    en: "Lifetime membership for prominent figures, senior professionals, and key association contributors.",
+    ar: "عضوية مدى الحياة للشخصيات البارزة، وكبار المهنيين، والمساهمين الرئيسيين في الجمعية.",
+    zh: "面向杰出人士、资深专业专家及协会核心贡献者的终身荣誉会员身份。",
+    ja: "著名人、シニアプロフェッショナル、および協会の主要な貢献者向けの終身会員資格です。"
+  },
+  "Masa aktif seumur hidup": {
+    en: "Lifetime active period",
+    ar: "فترة صلاحية مدى الحياة",
+    zh: "终身有效会员期",
+    ja: "終身有効期間"
+  },
+  "Lifetime badge": {
+    en: "Lifetime badge",
+    ar: "شارة مدى الحياة",
+    zh: "终身尊享专属徽章",
+    ja: "ライフタイムバッジ"
+  },
+  "Akses semua dokumen anggota": {
+    en: "Access to all member documents",
+    ar: "الوصول إلى جميع مستندات الأعضاء",
+    zh: "无限制访问所有会员文档",
+    ja: "すべての会員向けドキュメントへのアクセス"
+  },
+  "Prioritas event": {
+    en: "Event priority",
+    ar: "أولوية الفعاليات",
+    zh: "活动优先预约参与",
+    ja: "イベント優先権"
+  },
+  "Hak voting permanen": {
+    en: "Permanent voting rights",
+    ar: "حقوق تصويت دائمة",
+    zh: "永久性投票表决权",
+    ja: "永久投票権"
+  },
+  "Profil eksklusif di direktori": {
+    en: "Exclusive profile in directory",
+    ar: "ملف تعريف حصري في الدليل",
+    zh: "名录尊贵独家个人主页",
+    ja: "ディレクトリ内限定プロフィール"
+  },
+  "Honorary Member": {
+    en: "Honorary Member",
+    ar: "عضو شرفي",
+    zh: "荣誉会员",
+    ja: "名誉会員"
+  },
+  "Keanggotaan kehormatan untuk tokoh, penasihat, atau kontributor strategis.": {
+    en: "Honorary membership for prominent figures, advisors, or strategic contributors.",
+    ar: "عضوية فخرية للشخصيات البارزة أو المستشارين أو المساهمين الاستراتيجيين.",
+    zh: "面向杰出人士、顾问或战略贡献者的荣誉会员身份。",
+    ja: "著名人、顧問、または戦略的貢献者のための名誉会員資格です。"
+  },
+  "Honorary badge": {
+    en: "Honorary badge",
+    ar: "شارة فخرية",
+    zh: "荣誉专属徽章",
+    ja: "名誉バッジ"
+  },
+  "Profil khusus": {
+    en: "Special profile",
+    ar: "ملف تعريف خاص",
+    zh: "专属个人主页",
+    ja: "特別プロフィール"
+  },
+  "Undangan acara resmi": {
+    en: "Official event invitation",
+    ar: "دعوة لحضور فعاليات رسمية",
+    zh: "官方活动特邀参与",
+    ja: "公式イベントへの招待"
+  },
+  "Akses laporan tertentu": {
+    en: "Access to selected reports",
+    ar: "الوصول إلى تقارير محددة",
+    zh: "特定行业报告获取",
+    ja: "特定レポートへのアクセス"
   }
 };
 
