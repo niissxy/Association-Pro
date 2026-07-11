@@ -1318,10 +1318,10 @@ export default function MemberPortal({
                         </td>
                         <td className="p-4 text-center font-mono text-slate-400 dark:text-slate-550">v{d.version}</td>
                         <td className="p-4 text-center">
-                          <span className={`inline-block text-[9.5px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full ${
+                          <span className={`inline-block text-[9.5px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${
                             d.accessLevel === 'public' 
-                              ? 'bg-emerald-100 text-emerald-600 dark:bg-emerald-950/30 dark:text-emerald-400' 
-                              : 'bg-indigo-100 text-indigo-600 dark:bg-indigo-950/30 dark:text-indigo-400'
+                              ? 'bg-emerald-50 text-emerald-700 border-emerald-200/60 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-transparent' 
+                              : 'bg-indigo-50 text-indigo-700 border-indigo-200/60 dark:bg-indigo-950/30 dark:text-indigo-400 dark:border-transparent'
                           }`}>
                             {d.accessLevel === 'public' ? 'PUBLIK' : 'INTERNAL SAH'}
                           </span>

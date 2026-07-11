@@ -1718,7 +1718,7 @@ export default function PublicWebsite({
                       </div>
                       <div className="flex items-baseline gap-1 mb-4">
                         <span className={`text-2xl font-black ${themeMode === 'light' ? colorTheme.textDark : 'text-white'}`}>Rp {(tier.price).toLocaleString('id-ID')}</span>
-                        <span className="text-xs text-slate-500 dark:text-slate-400 select-none font-semibold">/ {tier.billingCycle === 'yearly' ? (lang === 'en' ? 'year' : 'tahun') : (lang === 'en' ? 'lifetime' : 'seumur hidup')}</span>
+                        <span className="text-xs text-slate-500 dark:text-slate-400 select-none font-semibold">/ {tier.billingCycle === 'yearly' ? translateText('tahun', lang as any) : translateText('seumur hidup', lang as any)}</span>
                       </div>
                       <p className={`text-xs mb-6 leading-relaxed p-3 rounded-xl border font-semibold ${
                         themeMode === 'light'
@@ -2438,7 +2438,7 @@ export default function PublicWebsite({
                         </div>
                         <span className={`text-[10px] font-black px-2.5 py-1 rounded-md border ${
                           d.accessLevel === 'public'
-                            ? 'bg-emerald-600 text-white border-transparent dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/25'
+                            ? 'bg-emerald-50 text-emerald-700 border-emerald-200/60 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/25'
                             : `${colorTheme.badge}`
                         }`}>
                           {d.accessLevel === 'public' ? t.publicLabel : `🔒 ${t.verifiedMemberOnly}`}
@@ -2589,7 +2589,7 @@ export default function PublicWebsite({
                     <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-850/30 flex justify-between items-center">
                       <span className={`text-[10px] px-2.5 py-0.5 rounded border font-extrabold ${
                         jb.accessLevel === 'public' 
-                          ? 'bg-emerald-600 text-white border-transparent dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/20' 
+                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200/60 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/20' 
                           : `${colorTheme.badge}`
                       }`}>
                         {jb.accessLevel === 'public' ? t.publicLabel : `🔒 ${t.verifiedMemberOnly}`}

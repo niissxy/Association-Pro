@@ -886,32 +886,6 @@ const enTranslation: TranslationSet = {
 
 };
 
-const arTranslation: TranslationSet = {
-  ...idTranslation,
-  appName: "أسوشيشن بورتال برو",
-
-};
-
-const zhTranslation: TranslationSet = {
-  ...idTranslation,
-  appName: "协会专业门户 Pro",
-
-};
-
-const jaTranslation: TranslationSet = {
-  ...idTranslation,
-  appName: "アソシエーション ポータル Pro",
-
-};
-
-export const translations: Record<LanguageCode, TranslationSet> = {
-  id: idTranslation,
-  en: enTranslation,
-  ar: arTranslation,
-  zh: zhTranslation,
-  ja: jaTranslation,
-
-};
 
 const bilingualDictionary: Record<string, Record<Exclude<LanguageCode, 'id'>, string>> = {
   // Navigation / Header
@@ -2272,8 +2246,60 @@ const bilingualDictionary: Record<string, Record<Exclude<LanguageCode, 'id'>, st
     ar: "الوصول إلى تقارير محددة",
     zh: "特定行业报告获取",
     ja: "特定レポートへのアクセス"
+  },
+  "tahun": {
+    en: "year",
+    ar: "سنة",
+    zh: "年",
+    ja: "年"
+  },
+  "seumur hidup": {
+    en: "lifetime",
+    ar: "مدى الحياة",
+    zh: "终身",
+    ja: "終身"
   }
 };
+
+function generateTranslationSet(lang: Exclude<LanguageCode, 'id'>, customOverrides: Partial<TranslationSet> = {}): TranslationSet {
+  const result = { ...idTranslation } as any;
+  for (const [key, value] of Object.entries(idTranslation)) {
+    if (typeof value === 'string') {
+      const trimmed = value.trim();
+      if (bilingualDictionary[trimmed] && bilingualDictionary[trimmed][lang]) {
+        result[key] = bilingualDictionary[trimmed][lang];
+      } else {
+        // Fallback to English translation defined in enTranslation
+        const enVal = (enTranslation as any)[key];
+        if (enVal) {
+          result[key] = enVal;
+        }
+      }
+    }
+  }
+  return { ...result, ...customOverrides };
+}
+
+const arTranslation: TranslationSet = generateTranslationSet('ar', {
+  appName: "أسوشيشن بورتال برو",
+});
+
+const zhTranslation: TranslationSet = generateTranslationSet('zh', {
+  appName: "协会专业门户 Pro",
+});
+
+const jaTranslation: TranslationSet = generateTranslationSet('ja', {
+  appName: "アソシエーション ポータル Pro",
+});
+
+export const translations: Record<LanguageCode, TranslationSet> = {
+  id: idTranslation,
+  en: enTranslation,
+  ar: arTranslation,
+  zh: zhTranslation,
+  ja: jaTranslation,
+};
+
 
 export function translateText(text: string, lang: LanguageCode): string {
   if (lang === 'id') return text;
