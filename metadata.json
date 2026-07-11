@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Association Portal Pro",
+  "description": "Modern Membership, Event, Payment, Certificate \u0026 Community Platform for professional and business organizations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
