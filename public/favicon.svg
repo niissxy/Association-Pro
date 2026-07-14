@@ -1,0 +1,28 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .brand-a {
+      fill: #0f172a;
+    }
+    @media (prefers-color-scheme: dark) {
+      .brand-a {
+        fill: #f8fafc;
+      }
+    }
+  </style>
+  <!-- Outer circular swooshes -->
+  <path d="M 50,5 A 45,45 0 0,0 15,75" stroke="#0284c7" strokeWidth="6.5" strokeLinecap="round" fill="none" />
+  <path d="M 85,30 A 45,45 0 0,1 50,95 A 45,45 0 0,1 35,92" stroke="#d97706" strokeWidth="6.5" strokeLinecap="round" fill="none" />
+  
+  <!-- Stylized 'A' shape -->
+  <path class="brand-a" d="M 50,15 L 18,80 L 32,80 L 50,44 L 68,80 L 82,80 Z" />
+  
+  <!-- People figures inside -->
+  <circle cx="39" cy="55" r="5" fill="#d97706" />
+  <path d="M 34,65 C 34,60 44,60 44,65 L 44,78 L 34,78 Z" fill="#d97706" />
+  
+  <circle cx="50" cy="51" r="5.5" fill="#0284c7" />
+  <path d="M 44.5,62 C 44.5,56.5 55.5,56.5 55.5,62 L 55.5,78 L 44.5,78 Z" fill="#0284c7" />
+  
+  <circle cx="61" cy="55" r="5" fill="#d97706" />
+  <path d="M 56,65 C 56,60 66,60 66,65 L 66,78 L 56,78 Z" fill="#d97706" />
+</svg>

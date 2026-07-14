@@ -845,7 +845,7 @@ export default function PublicWebsite({
       </header>
 
       {/* Primary Landing Content */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-8 space-y-24">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-24">
         {/* HOME SECTION */}
         <section id="home" className="scroll-mt-24 space-y-12">
             {/* HERO SECTION */}
